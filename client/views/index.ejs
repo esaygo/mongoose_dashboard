@@ -1,0 +1,38 @@
+<html>
+<head>
+<title></title>
+    <link rel='stylesheet' href='css/style.css' />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- <script type ="text/javascript" src="/socket.io/socket.io.js"></script> -->
+    <script type ="text/javascript">
+        $(document).ready(function (){
+
+  }); //end of document ready
+
+    </script>
+<style>
+
+</style>
+</head>
+<body>
+  <h1>Otters</h1>
+  <h3><%
+    if( typeof message !== 'undefined') { %>
+    %= message %>
+    <% } %>
+  </h3>
+    <div>
+      <%
+      if(typeof otters !== 'undefined' && otters !== {}) {
+      for(var index in otters) { %>
+        <ul>
+          <li><a href= "/otters/<%= otters[index]._id %>"> <%= otters[index].name %></a></li>
+          <li><img src='/images/<%= otters[index].photo %>'></li>
+          <p>Likes: <%= otters[index].likes %></p>
+        </ul>
+        <hr>
+      <% } } %>
+    <div>
+  <button><a href="/new">Add a new otter!</a></button>
+</body>
+</html>

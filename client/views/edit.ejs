@@ -1,0 +1,39 @@
+<html>
+<head>
+<title></title>
+<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel='stylesheet' href='css/style.css' />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- <script type ="text/javascript" src="/socket.io/socket.io.js"></script> -->
+    <script type ="text/javascript">
+        $(document).ready(function (){
+
+  }); //end of document ready
+
+    </script>
+<style>
+
+</style>
+</head>
+<body>
+  <h1>Edit</h1>
+
+  <form class="pure-form pure-form-aligned" enctype="multipart/form-data" action="/edit_otter/<%= otter._id %>" method="post">
+    <fieldset>
+        <div class="pure-control-group">
+            <label for="name">Name</label>
+            <input id="name" type="text" name="name" placeholder="name" value="<%= otter.name %>">
+        </div>
+        <div><img src="/images/<%= otter.photo %>" width="350" height="250" style="border-radius: 10px; margin: 20px;"></div>
+        <div class="pure-control-group">
+            <label for="photo">Choose a new Photo</label>
+            <input id="photo" type="file" name="photo">
+        </div>
+            <button type="submit" class="pure-button pure-button-primary">Edit</button>
+        </div>
+    </fieldset>
+</form>
+  <button><a href="/">Back to dashboard</a></button>
+</body>
+</html>

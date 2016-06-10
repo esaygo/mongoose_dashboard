@@ -1,0 +1,26 @@
+<html>
+<head>
+<title></title>
+    <link rel='stylesheet' href='css/style.css' />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- <script type ="text/javascript" src="/socket.io/socket.io.js"></script> -->
+
+</head>
+<body>
+  <h1><% console.log(otter) %></h1>
+
+    <div>
+      <%
+      if(typeof otter !== 'undefined' && otter !== {}) {
+       %>
+        <p>Name: <%= otter.name %></p>
+        <img src='/images/<%= otter.photo %>' width="350" height="250" style="border-radius: 10px; margin: 10px;">
+        <p>Likes: <%= otter.likes %></p>
+      <% } %>
+    <div>
+  <button><a href="/like/<%= otter._id %>">Like profile!</a></button>
+  <button><a href="/edit/<%= otter._id %>">Edit profile!</a></button>
+  <button><a href="/destroy/<%= otter._id %>">Delete profile!</a></button>
+  <button><a href="/">Back to dashboard!</a></button>
+</body>
+</html>
